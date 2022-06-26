@@ -1,21 +1,41 @@
+<?php $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <title>Portfólio | Leone Oliveira</title>
+    <meta property="og:title" content="Portfólio | Leone Oliveira">
+    <meta name="twitter:title" content="Portfólio | Leone Oliveira">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/product.css" rel="stylesheet">
+    <meta name="description"
+          content="Quem é Leone Oliveira ? Venha conhecer um pouco mais sobre mim e sobre meus projetos pessoais.">
+    <meta name="twitter:description"
+          content="Quem é Leone Oliveira ? Venha conhecer um pouco mais sobre mim e sobre meus projetos pessoais.">
+    <meta property="og:description"
+          content="Quem é Leone Oliveira ? Venha conhecer um pouco mais sobre mim e sobre meus projetos pessoais.">
+    <meta property="og:site_name" content="Leone Oliveira">
+    <meta name="author" content="Leone Oliveira">
+    <meta name="publisher" content="Leone Oliveira">
+    <meta name="creator" content="Leone Oliveira">
+    <meta name="keywords" content="Desenvolvedor, Programador, Estudante, Leone Oliveira, Jovem, Dedicado">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo $url; ?>">
+    <meta property="og:url" content="<?php echo $url; ?>">
+    <meta name="twitter:url" content="<?php echo $url; ?>">
+    <meta name="twitter:card" content="summary">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Leone Oliveira</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="#apps"><i>Web Apps</i> e Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#blog"><i>Blog</i></a></li>
@@ -212,7 +232,7 @@
             </ul>
         </div>
 </footer>
-<script src="./js/jquery-slim.min.js"></script>
+<script src="/js/jquery-slim.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/holder.min.js"></script>
 <script>
@@ -223,5 +243,4 @@
     });
 </script>
 </body>
-
 </html>
