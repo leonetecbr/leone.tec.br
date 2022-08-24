@@ -1,4 +1,8 @@
-<?php $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+<?php
+$url = !empty($_SERVER['REQUEST_SCHEME'])?
+    $_SERVER['REQUEST_SCHEME'] :
+    'http'
+    . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -38,7 +42,6 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="#apps"><i>Web Apps</i> e Jogos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#blog"><i>Blog</i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#social">Redes sociais</a></li>
             </ul>
         </div>
@@ -61,7 +64,7 @@
     <div class="product-device product-device-2 shadow-sm d-none d-lg-block"></div>
 </div>
 <div class="text-center p-md-4 bg-dark text-light p-3" id="apps">
-    <h2 class="fs-2">Meus jogos e apps </h2>
+    <h2 class="fs-2">Meus apps e jogos</h2>
 </div>
 <div class="d-md-flex flex-md-equal w-100 pl-md-3">
     <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="ofertas">
@@ -70,6 +73,10 @@
             <img src="/img/ofertas.png" alt="Leone Promos">
         </div>
         <h2 class="display-5">Leone Promos</h2>
+        <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
+        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="Jquery"/>
+        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+        <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
         <div class="mt-3 py-3">
             <p class="lead">O Leone Promos é um <i>site</i> que reúne as melhores ofertas das lojas mais seguras da <i>internet</i>,
                 temos uma seleção de melhores promoções escolhidas a dedo por mim, além disso, é possível ativar
@@ -91,6 +98,8 @@
             <img src="/img/bot_alert.png" alt="Bot de alerta">
         </div>
         <h2 class="display-5">Bot de Alerta</h2>
+        <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+        <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
         <div class="my-3 p-3">
             <p class="lead">Esse bot permite aos usuários gerenciarem quais tópicos querem ser alertados a qualquer
                 momento, permite que qualquer usuário lance um alerta para avisar a todos quando algo importante
@@ -110,11 +119,12 @@
             <img src="/img/federal_skill.png" alt="Resultado da Federal">
         </div>
         <h2 class="display-5">Resultado da Federal</h2>
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWSD">
         <div class="my-3 p-3">
             <p class="lead">Essa Skill para Alexa fornece o resultado da Loteria Federal com 6, 4 ou 2 dígitos, além do
                 resultado do último concurso, ela informa o que foi sorteado em qualquer concurso anterior e ainda pode
-                gerar um palpite caso o
-                usuário deseje.</p>
+                gerar um palpite caso o usuário deseje.</p>
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
@@ -132,6 +142,7 @@
             <img src="/apps/megasena/icons/192.png" alt="Mega-Sena">
         </div>
         <h2 class="display-5">Números da Mega-Sena</h2>
+        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
         <div class="mt-3 py-3">
             <p class="lead">Com grande parte das pessoas querendo apostar na Mega-sena da virada e diante da
                 impossibilidade de geração dos números diretamente pelo sistema da CAIXA, criei esse pequeno sistema que
@@ -158,6 +169,8 @@
             <img src="/games/snake/img/192.png" alt="Jogo da cobrinha">
         </div>
         <h2 class="display-5">Jogo da Cobrinha</h2>
+        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
         <div class="mt-3 py-3">
             <p class="lead">O clássico jogo da cobrinha recriado para o curso de HTML Web Developer que fiz na Digital
                 Innovation One. Fiz algumas adições ao jogo original como adição das bombas que fazem perder pontuação e
@@ -178,6 +191,10 @@
             <img src="/img/tictactoe.png" alt="Jogo da velha">
         </div>
         <h2 class="display-5">Jogo da Velha</h2>
+        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+        <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
         <div class="my-3 p-3">
             <p class="lead">O bastante conhecido jogo da velha agora pode ser jogado sem você precisar instalar
                 nenhum aplicativo! Tudo pelo navegador, mas ainda sim, você poderá chamar seu amigo para jogar contra
@@ -215,23 +232,6 @@
         </div>
     </div>
 </div-->
-<div class="text-center p-md-4 bg-dark text-light mb-3 p-3" id="blog">
-    <h2 class="fs-2">Meu <i>Blog</i></h2>
-</div>
-<div class="lead py-3 px-md-5 px-3">
-    <p>Sempre gostei muito de escrever e no final de 2021 eu resolvi criar um <i>blog</i> para auxiliar a pessoas em
-        assuntos
-        relacionados a tecnologia, lá eu ensino a como não cair em golpes, como escolher bem produtos de tecnologia,
-        entre outras dicas.</p>
-    <p>Usei a criação do <i>blog</i> para aprender tecnologias que até então não tinha familiaridade, uma delas foi o
-        WordPress
-        que eu conhecia bem pouco, acabei aprendendo para poder desenvolver meu próprio tema.</p>
-    <p>Ultimamente dei uma pausa nas postagens porque estou um pouco sem tempo de escrever, mas pretendo retornar em
-        breve</p>
-    <div class="text-center">
-        <a href="/blog" target="_blank" class="btn btn-outline-dark btn-lg">Conhecer o meu <i>blog</i></a>
-    </div>
-</div>
 <footer class="container-fluid bg-dark text-light fw-light">
     <div class="container py-5">
         <div class="row">
