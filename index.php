@@ -82,7 +82,7 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
         <h2 class="display-5">Leone Promos</h2>
         <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="Jquery"/>
+        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"/>
         <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
         <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
         <div class="mt-3 py-3">
@@ -121,14 +121,65 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
     </div>
 </div>
 <div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="federal">
+    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="recenseador">
         <div class="bg-dark shadow-sm mx-auto p-3 mb-3"
+             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
+            <img src="/img/recenseador.png" alt="Calculadora da remuneração do Recenseador">
+        </div>
+        <h2 class="display-5">Calculadora - Remuneração recenseador</h2>
+        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+        <div class="my-3 p-3">
+            <p class="lead">Depois que o IBGE não forneceu ferramentas para o cálculo preciso da remuneração do
+                recenseador, houve a necessidade de uma solução que calculasse a partir do que já foi produzido, o valor
+                real que o recenseador tem a receber, já considerando todos os descontos e benefícios.
+            </p>
+        </div>
+        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
+            <div>
+                <a href="https://leone.tec.br/apps/ibge/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
+            </div>
+            <div>
+                <a href="https://github.com/leonetecbr/calculadora-recenseador-ibge" class="btn btn-outline-dark bg-lg">Ver código</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark text-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="pix-ou-cartao">
+        <div class="bg-light shadow-sm mx-auto mb-3"
+             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
+            <img src="/img/pix_ou_cartao.png" alt="PIX ou cartão?">
+        </div>
+        <h2 class="display-5">No PIX ou no cartão?</h2>
+        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+        <div class="mt-3 py-3">
+            <p class="lead">As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo pagar à
+                vista? Esse pequeno aplicativo calcula se realmente vale a pena, ele considera os pontos/milhas ganhos,
+                cashback e que o dinheiro ficaria investido até o dia do vencimento da fatura.</p>
+        </div>
+        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
+            <div>
+                <a href="https://leone.tec.br/apps/cartao-ou-pix/" class="btn btn-outline-light bg-lg">Acessar agora</a>
+            </div>
+            <div>
+                <a href="https://github.com/leonetecbr/cartao-ou-pix" class="btn btn-outline-light bg-lg">
+                    Ver código
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-md-flex flex-md-equal w-100 pl-md-3">
+    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="federal">
+        <div class="bg-light shadow-sm mx-auto p-3 mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
             <img src="/img/federal_skill.png" alt="Resultado da Federal">
         </div>
         <h2 class="display-5">Resultado da Federal</h2>
         <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-        <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWSD">
+        <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
         <div class="my-3 p-3">
             <p class="lead">Essa Skill para Alexa fornece o resultado da Loteria Federal com 6, 4 ou 2 dígitos, além do
                 resultado do último concurso, ela informa o que foi sorteado em qualquer concurso anterior e ainda pode
@@ -136,16 +187,16 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://www.amazon.com.br/dp/B099X7D5NC" class="btn btn-outline-dark bg-lg">Ativar skill</a>
+                <a href="https://www.amazon.com.br/dp/B099X7D5NC" class="btn btn-outline-light bg-lg">Ativar skill</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/alexa-resultado-federal/" class="btn btn-outline-dark bg-lg">Ver código</a>
+                <a href="https://github.com/leonetecbr/alexa-resultado-federal/" class="btn btn-outline-light bg-lg">Ver código</a>
             </div>
         </div>
     </div>
 
-    <div class="bg-dark text-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="megasena">
-        <div class="bg-light shadow-sm mx-auto mb-3"
+    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="megasena">
+        <div class="bg-dark shadow-sm mx-auto mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
             <img src="/apps/megasena/icons/192.png" alt="Mega-Sena">
         </div>
@@ -159,20 +210,19 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://leone.tec.br/apps/megasena/" class="btn btn-outline-light bg-lg">Acessar agora</a>
+                <a href="https://leone.tec.br/apps/megasena/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/gera-numeros-mega-sena" class="btn btn-outline-light bg-lg">
+                <a href="https://github.com/leonetecbr/gera-numeros-mega-sena" class="btn btn-outline-dark bg-lg">
                     Ver código
                 </a>
             </div>
         </div>
     </div>
 </div>
-
 <div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="snake">
-        <div class="bg-light shadow-sm mx-auto mb-3"
+    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="snake">
+        <div class="bg-dark shadow-sm mx-auto mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
             <img src="/games/snake/img/192.png" alt="Jogo da cobrinha">
         </div>
@@ -186,15 +236,15 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://leone.tec.br/games/snake" class="btn btn-outline-light bg-lg">Jogar agora</a>
+                <a href="https://leone.tec.br/games/snake" class="btn btn-outline-dark bg-lg">Jogar agora</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/snake-dio" class="btn btn-outline-light bg-lg">Ver código</a>
+                <a href="https://github.com/leonetecbr/snake-dio" class="btn btn-outline-dark bg-lg">Ver código</a>
             </div>
         </div>
     </div>
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="tictactoe">
-        <div class="bg-dark shadow-sm mx-auto mb-3"
+    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="tictactoe">
+        <div class="bg-light shadow-sm mx-auto mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
             <img src="/img/tictactoe.png" alt="Jogo da velha">
         </div>
@@ -210,36 +260,14 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://leone.tec.br/games/tic-tac-toe" class="btn btn-outline-dark bg-lg">Jogar agora</a>
+                <a href="https://leone.tec.br/games/tic-tac-toe" class="btn btn-outline-light bg-lg">Jogar agora</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/tic-tac-toe" class="btn btn-outline-dark bg-lg">Ver código</a>
+                <a href="https://github.com/leonetecbr/tic-tac-toe" class="btn btn-outline-light bg-lg">Ver código</a>
             </div>
         </div>
     </div>
 </div>
-<!--div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="resgate">
-    <div class="bg-light shadow-sm mx-auto p-3 mb-3"
-         style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-        <img src="/games/rescue/imgs/icons/192.png" alt="Jogo de resgate">
-    </div>
-    <h2 class="display-5">Jogo de Resgate</h2>
-    <div class="my-3 p-3">
-        <p class="lead">Seguindo as orientações do professor da Digital Innovation One, construir esse jogo onde o
-            objetivo é regatar o amigo e eliminar a maior quantidade de inimigos possíveis. A dificuldade aumenta
-            sempre que o jogador consegue mais pontos até ele perder todas suas energias, além disso, é possível
-            jogar <i>offline</i>.
-        </p>
-    </div>
-    <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-        <div>
-            <a href="https://leone.tec.br/games/rescue" class="btn btn-outline-light bg-lg">Jogar agora</a>
-        </div>
-        <div>
-            <a href="https://github.com/leonetecbr/rescue-dio" class="btn btn-outline-light bg-lg">Ver código</a>
-        </div>
-    </div>
-</div-->
 <footer class="container-fluid bg-dark text-light fw-light">
     <div class="container py-5">
         <div class="row">
