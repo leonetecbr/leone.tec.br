@@ -126,13 +126,14 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
             <img src="/img/recenseador.png" alt="Calculadora da remuneração do Recenseador">
         </div>
-        <h2 class="display-5">Calculadora - Remuneração recenseador</h2>
+        <h2 class="display-5">Calculadora do recenseador</h2>
         <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
         <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
         <div class="my-3 p-3">
-            <p class="lead">Depois que o IBGE não forneceu ferramentas para o cálculo preciso da remuneração do
-                recenseador, houve a necessidade de uma solução que calculasse a partir do que já foi produzido, o valor
-                real que o recenseador tem a receber, já considerando todos os descontos e benefícios.
+            <p class="lead">
+                Permite o cálculo da remuneração do recenseador, taxa do setor, taxa de ausência e do valor da rescisão
+                de forma precisa com todos os benefícios e descontos. O melhor de tudo é que é possível utilizar a
+                calculadora sem conexão com a internet.
             </p>
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
@@ -145,26 +146,28 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
     </div>
 
-    <div class="bg-dark text-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="pix-ou-cartao">
+    <div class="bg-dark text-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="apuracao">
         <div class="bg-light shadow-sm mx-auto mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/pix_ou_cartao.png" alt="PIX ou cartão?">
+            <img src="/apps/eleicoes2022/icons/x192.png" alt="Eleições 2022">
         </div>
-        <h2 class="display-5">No PIX ou no cartão?</h2>
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
-        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+        <h2 class="display-5">Apuração das eleições 2022</h2>
+        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+        <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material UI">
+        <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
         <div class="mt-3 py-3">
-            <p class="lead">As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo pagar à
-                vista? Esse pequeno aplicativo calcula se realmente vale a pena, ele considera os pontos/milhas ganhos,
-                cashback e que o dinheiro ficaria investido até o dia do vencimento da fatura.</p>
+            <p class="lead">
+                Todos querem acompanhar a apuração dos resultados da eleição e como aqui no Brasil a
+                apuração é feita de forma informatizada, esse app usa a API do TSE para mostrar os resultados de forma
+                simples e rápida, buscando automaticamente os dados e atualizando a cada 1 minuto.
+            </p>
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://leone.tec.br/apps/cartao-ou-pix/" class="btn btn-outline-light bg-lg">Acessar agora</a>
+                <a href="https://leone.tec.br/apps/eleicoes2022" class="btn btn-outline-light bg-lg">Acessar agora</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/cartao-ou-pix" class="btn btn-outline-light bg-lg">
+                <a href="https://github.com/leonetecbr/eleicoes-2022" class="btn btn-outline-light bg-lg">
                     Ver código
                 </a>
             </div>
@@ -195,25 +198,26 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
         </div>
     </div>
 
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="megasena">
+    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="pix-ou-cartao">
         <div class="bg-dark shadow-sm mx-auto mb-3"
              style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/apps/megasena/icons/192.png" alt="Mega-Sena">
+            <img src="/img/pix_ou_cartao.png" alt="PIX ou cartão?">
         </div>
-        <h2 class="display-5">Números da Mega-Sena</h2>
-        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+        <h2 class="display-5">No PIX ou no cartão?</h2>
+        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
         <div class="mt-3 py-3">
-            <p class="lead">Com grande parte das pessoas querendo apostar na Mega-sena da virada e diante da
-                impossibilidade de geração dos números diretamente pelo sistema da CAIXA, criei esse pequeno sistema que
-                gera os números para quem quiser apostar na Mega-Sena, além disso, há opções de personalização do modo
-                de geração dos números.</p>
+            <p class="lead">As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo pagar à
+                vista? Esse pequeno aplicativo calcula se realmente vale a pena, ele considera os pontos/milhas ganhos,
+                cashback e que o dinheiro ficaria investido até o dia do vencimento da fatura.</p>
         </div>
         <div class="d-flex flex-row mb-3 p-3 justify-content-around">
             <div>
-                <a href="https://leone.tec.br/apps/megasena/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
+                <a href="https://leone.tec.br/apps/cartao-ou-pix/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
             </div>
             <div>
-                <a href="https://github.com/leonetecbr/gera-numeros-mega-sena" class="btn btn-outline-dark bg-lg">
+                <a href="https://github.com/leonetecbr/cartao-ou-pix" class="btn btn-outline-dark bg-lg">
                     Ver código
                 </a>
             </div>
