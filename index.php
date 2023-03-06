@@ -1,8 +1,12 @@
 <?php
 $url = !empty($_SERVER['REQUEST_SCHEME'])?
-    $_SERVER['REQUEST_SCHEME'] :
-    'http'
-    . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+    $_SERVER['REQUEST_SCHEME'] : 'http'
+    . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+$projects = json_decode(file_get_contents('projects.json'), true);
+$dark = true;
+$i = 0;
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -74,210 +78,51 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
 <div class="text-center p-md-4 bg-dark text-light p-3" id="apps">
     <h2 class="fs-2">Meus apps e jogos</h2>
 </div>
-<div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="ofertas">
-        <div class="bg-light shadow-sm mx-auto mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/ofertas.png" alt="Leone Promos">
-        </div>
-        <h2 class="display-5">Leone Promos</h2>
-        <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"/>
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-        <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
-        <div class="mt-3 py-3">
-            <p class="lead">O Leone Promos é um <i>site</i> que reúne as melhores ofertas das lojas mais seguras da <i>internet</i>,
-                temos uma seleção de melhores promoções escolhidas a dedo por mim, além disso, é possível ativar
-                notificações, pesquisar pelo produto desejado, navegar por uma seleção de promoções por lojas e por
-                categorias e até mesmo rastrear seu pedido se ele tiver sido enviado pelos Correios.</p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://ofertas.leone.tec.br/" class="btn btn-outline-light bg-lg">Acessar agora</a>
+    <?php
+        foreach ($projects as $project):
+            $i++;
+            if ($i % 2 !== 0) echo '<div class="d-md-flex flex-md-equal w-100 pl-md-3">';
+    ?>
+        <div class="bg-<?php echo ($dark) ? 'dark' : 'light'; ?> mr-md-3 px-3 px-md-5 text-center text-<?php echo ($dark) ? 'light' : 'dark'; ?> overflow-hidden">
+            <div class="bg-light shadow-sm mx-auto mb-3"
+                 style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
+                <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['name']; ?>">
             </div>
-            <div>
-                <a href="https://github.com/leonetecbr/leone-promos" class="btn btn-outline-light bg-lg">Ver código</a>
+            <h2 class="display-5"><?php echo $project['name']; ?></h2>
+            <?php foreach ($project['badges'] as $badge): ?>
+                <img src="<?php echo $badge['image']; ?>" alt="<?php echo $badge['name']; ?>"/>
+            <?php endforeach; ?>
+            <div class="mt-3 py-3">
+                <p class="lead">
+                    <?php echo $project['description']; ?>
+                </p>
             </div>
-        </div>
-    </div>
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="federal">
-        <div class="bg-dark shadow-sm mx-auto p-3 mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/bot_alert.png" alt="Bot de alerta">
-        </div>
-        <h2 class="display-5">Bot de Alerta</h2>
-        <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
-        <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
-        <div class="my-3 p-3">
-            <p class="lead">Esse bot permite aos usuários gerenciarem quais tópicos querem ser alertados a qualquer
-                momento, permite que qualquer usuário lance um alerta para avisar a todos quando algo importante
-                acontecer no grupo do WhatsApp, além disso, os tópicos são facilmente customizáveis.</p>
-        </div>
-        <div class="d-grid mb-3 p-3">
-            <a href="https://github.com/leonetecbr/bot-alert-group-whatsapp/" class="btn btn-outline-dark bg-lg btn-block">
-                Ver código
-            </a>
-        </div>
-    </div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="recenseador">
-        <div class="bg-dark shadow-sm mx-auto p-3 mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/recenseador.png" alt="Calculadora da remuneração do Recenseador">
-        </div>
-        <h2 class="display-5">Calculadora do recenseador</h2>
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
-        <div class="my-3 p-3">
-            <p class="lead">
-                Permite o cálculo da remuneração do recenseador, taxa do setor, taxa de ausência e do valor da rescisão
-                de forma precisa com todos os benefícios e descontos. O melhor de tudo é que é possível utilizar a
-                calculadora sem conexão com a internet.
-            </p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://leone.tec.br/apps/ibge/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/calculadora-recenseador-ibge" class="btn btn-outline-dark bg-lg">Ver código</a>
-            </div>
-        </div>
-    </div>
+            <div class="mb-3 p-3 <?php echo (count($project['links']) > 1) ? 'd-flex flex-row justify-content-around' : 'd-grid' ?>">
+                <?php
+                    foreach ($project['links'] as $link):
+                        if (count($project['links']) > 1) echo "<div>";
+                ?>
 
-    <div class="bg-dark text-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="apuracao">
-        <div class="bg-light shadow-sm mx-auto mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/apps/eleicoes2022/icons/x192.png" alt="Eleições 2022">
-        </div>
-        <h2 class="display-5">Apuração das eleições 2022</h2>
-        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-        <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material UI">
-        <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-        <div class="mt-3 py-3">
-            <p class="lead">
-                Todos querem acompanhar a apuração dos resultados da eleição e como aqui no Brasil a
-                apuração é feita de forma informatizada, esse app usa a API do TSE para mostrar os resultados de forma
-                simples e rápida, buscando automaticamente os dados e atualizando a cada 1 minuto.
-            </p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://leone.tec.br/apps/eleicoes2022" class="btn btn-outline-light bg-lg">Acessar agora</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/eleicoes-2022" class="btn btn-outline-light bg-lg">
-                    Ver código
-                </a>
+                    <a href="<?php echo $link['href']; ?>" class="btn btn-outline-<?php echo ($dark) ? 'light' : 'dark'; ?> bg-lg">
+                        <?php echo $link['title']; ?>
+                    </a>
+                <?php
+                        if (count($project['links']) > 1) echo "</div>";
+                    endforeach;
+                ?>
             </div>
         </div>
-    </div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="federal">
-        <div class="bg-light shadow-sm mx-auto p-3 mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/federal_skill.png" alt="Resultado da Federal">
-        </div>
-        <h2 class="display-5">Resultado da Federal</h2>
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-        <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-        <div class="my-3 p-3">
-            <p class="lead">Essa Skill para Alexa fornece o resultado da Loteria Federal com 6, 4 ou 2 dígitos, além do
-                resultado do último concurso, ela informa o que foi sorteado em qualquer concurso anterior e ainda pode
-                gerar um palpite caso o usuário deseje.</p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://www.amazon.com.br/dp/B099X7D5NC" class="btn btn-outline-light bg-lg">Ativar skill</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/alexa-resultado-federal/" class="btn btn-outline-light bg-lg">Ver código</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="pix-ou-cartao">
-        <div class="bg-dark shadow-sm mx-auto mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/pix_ou_cartao.png" alt="PIX ou cartão?">
-        </div>
-        <h2 class="display-5">No PIX ou no cartão?</h2>
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
-        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-        <div class="mt-3 py-3">
-            <p class="lead">As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo pagar à
-                vista? Esse pequeno aplicativo calcula se realmente vale a pena, ele considera os pontos/milhas ganhos,
-                cashback e que o dinheiro ficaria investido até o dia do vencimento da fatura.</p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://leone.tec.br/apps/cartao-ou-pix/" class="btn btn-outline-dark bg-lg">Acessar agora</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/cartao-ou-pix" class="btn btn-outline-dark bg-lg">
-                    Ver código
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 pl-md-3">
-    <div class="bg-light mr-md-3 px-3 px-md-5 text-center overflow-hidden" id="snake">
-        <div class="bg-dark shadow-sm mx-auto mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/games/snake/img/192.png" alt="Jogo da cobrinha">
-        </div>
-        <h2 class="display-5">Jogo da Cobrinha</h2>
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-        <div class="mt-3 py-3">
-            <p class="lead">O clássico jogo da cobrinha recriado para o curso de HTML Web Developer que fiz na Digital
-                Innovation One. Fiz algumas adições ao jogo original como adição das bombas que fazem perder pontuação e
-                o teclado virtual para dispositivos mobile.</p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://leone.tec.br/games/snake" class="btn btn-outline-dark bg-lg">Jogar agora</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/snake-dio" class="btn btn-outline-dark bg-lg">Ver código</a>
-            </div>
-        </div>
-    </div>
-    <div class="bg-dark mr-md-3 px-3 px-md-5 text-center text-light overflow-hidden" id="tictactoe">
-        <div class="bg-light shadow-sm mx-auto mb-3"
-             style="width: 80%; max-width: 230px; height: 230px; border-radius: 0 0 21px 21px;">
-            <img src="/img/tictactoe.png" alt="Jogo da velha">
-        </div>
-        <h2 class="display-5">Jogo da Velha</h2>
-        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-        <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
-        <div class="my-3 p-3">
-            <p class="lead">O bastante conhecido jogo da velha agora pode ser jogado sem você precisar instalar
-                nenhum aplicativo! Tudo pelo navegador, mas ainda sim, você poderá chamar seu amigo para jogar contra
-                você ou qualquer pessoa do mundo conectada a <i>internet</i>.</p>
-        </div>
-        <div class="d-flex flex-row mb-3 p-3 justify-content-around">
-            <div>
-                <a href="https://leone.tec.br/games/tic-tac-toe" class="btn btn-outline-light bg-lg">Jogar agora</a>
-            </div>
-            <div>
-                <a href="https://github.com/leonetecbr/tic-tac-toe" class="btn btn-outline-light bg-lg">Ver código</a>
-            </div>
-        </div>
-    </div>
-</div>
+    <?php
+        if ($i % 2 !== 0) $dark = !$dark;
+        else echo "</div>";
+        endforeach;
+    ?>
 <footer class="container-fluid bg-dark text-light fw-light">
     <div class="container py-5">
         <div class="row">
             <div class="col-6 col-lg">
-                <small class="d-block mb-3">&copy; 2020-<?php echo date('Y'); ?></small>
-                <small class="d-block mb-3">Todos os direitos reservados</small>
+                <small class="d-block mb-3">&copy; Copyright 2020-<?php echo date('Y'); ?></small>
+                <small class="d-block mb-3">Leone Oliveira</small>
             </div>
             <div class="col-6 col-lg" id="social">
                 <h5>Redes sociais</h5>
@@ -285,9 +130,7 @@ $url = !empty($_SERVER['REQUEST_SCHEME'])?
                     <li><a class="text-reset text-decoration-none opacity-75" href="https://www.linkedin.com/in/leonetecbr/">Linkedin</a></li>
                     <li><a class="text-reset text-decoration-none opacity-75" href="https://github.com/leonetecbr">GitHub</a></li>
                     <li><a class="text-reset text-decoration-none opacity-75" href="https://leone.tec.br/email">E-mail</a></li>
-                    <li><a class="text-reset text-decoration-none opacity-75" href="https://twitter.com/leonetecbr">Twitter</a></li>
                     <li><a class="text-reset text-decoration-none opacity-75" href="https://www.instagram.com/leone.tec.br/">Instagram</a></li>
-                    <li><a class="text-reset text-decoration-none opacity-75" href="https://www.facebook.com/leonetecbr">Facebook</a></li>
                 </ul>
             </div>
         </div>
